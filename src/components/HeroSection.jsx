@@ -62,9 +62,16 @@ const HeroSection = () => {
           </button>
 
           {/* Right - Explore */}
-          <span className="px-3 py-1 sm:px-4 sm:py-2 text-[#F0582B] font-medium">
+          <button 
+            onClick={() => {
+              document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+              // Trigger show all projects
+              window.dispatchEvent(new CustomEvent('showAllProjects'));
+            }}
+            className="px-3 py-1 sm:px-4 sm:py-2 text-[#F0582B] font-medium hover:text-[#E04A20] transition"
+          >
             Explore
-          </span>
+          </button>
         </div>
       </div>
       

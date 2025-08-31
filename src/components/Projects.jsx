@@ -1,48 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ProjectViewModal from "./ProjectViewModal";
 
 const projects = [
   { 
     name: "AgroPath", 
-    description: "A smart agriculture solution leveraging AI and IoT to monitor soil, predict crop yield, and optimize irrigation for farmers hkh iwhdilhwd iahdihdoi awodihfah hawfkhaf ihdah iwhroiwhi wahdijrkgksg kughsrkgh hskh ihsektgesegdrghrgdrghfh." 
+    description: "A smart agriculture solution leveraging AI and IoT to monitor soil, predict crop yield, and optimize irrigation for farmers.",
+    overview: "AgroPath is a comprehensive smart agriculture platform that combines AI and IoT technologies to revolutionize farming practices. The system monitors soil conditions, weather patterns, and crop health in real-time, providing farmers with actionable insights to optimize their yield and reduce resource waste.",
+    techStack: ["React", "Node.js", "MongoDB", "IoT Sensors", "Python", "TensorFlow", "AWS"],
+    githubLink: "https://github.com/ideabliss/agropath",
+    liveLink: "https://agropath-demo.com",
+    images: ["/api/placeholder/400/300", "/api/placeholder/400/300"]
   },
   { 
     name: "GenSheduler", 
-    description: "An AI-powered scheduling system that automatically generates timetables, manages resources, and eliminates human errors." 
+    description: "An AI-powered scheduling system that automatically generates timetables, manages resources, and eliminates human errors.",
+    overview: "GenSheduler is an intelligent timetable generation system that uses advanced algorithms to create optimal schedules for educational institutions. It considers multiple constraints like teacher availability, room capacity, and subject requirements to generate conflict-free timetables.",
+    techStack: ["Java", "Spring Boot", "MySQL", "Angular", "Genetic Algorithm"],
+    githubLink: "https://github.com/ideabliss/gensheduler",
+    images: ["/api/placeholder/400/300", "/api/placeholder/400/300"]
   },
   { 
     name: "Exclusely", 
-    description: "An exclusive e-commerce platform offering curated products, personalized recommendations, and a seamless user experience." 
-  },
-  { 
-    name: "Help Hour", 
-    description: "Another version of AgroPath with extended details and features for smart agriculture using AI + IoT." 
-  },
-  { 
-    name: "GradeBookX", 
-    description: "Improved scheduling system with smart conflict resolution and advanced analytics." 
-  },
-  { 
-    name: "BMI Tracker", 
-    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
-  },
-  { 
-    name: "PostureXpert", 
-    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
-  },
-
-    { 
-    name: "EaseHire", 
-    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
-  },
-
-  { 
-    name: "EaseHire", 
-    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
-  },
+    description: "An exclusive e-commerce platform offering curated products, personalized recommendations, and a seamless user experience.",
+    overview: "Exclusely is a premium e-commerce platform that focuses on curated, high-quality products. The platform uses machine learning to provide personalized recommendations and offers a seamless shopping experience with advanced search and filtering capabilities.",
+    techStack: ["React", "Redux", "Node.js", "Express", "PostgreSQL", "Stripe API"],
+    githubLink: "https://github.com/ideabliss/exclusely",
+    liveLink: "https://exclusely-demo.com",
+    images: ["/api/placeholder/400/300", "/api/placeholder/400/300"]
+  }
 ];
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleShowAll = () => setShowAll(true);
+    window.addEventListener('showAllProjects', handleShowAll);
+    return () => window.removeEventListener('showAllProjects', handleShowAll);
+  }, []);
+
+  const handleViewProject = (project) => {
+    setSelectedProject(project);
+    setIsViewModalOpen(true);
+  };
 
   // If showAll = true, show all projects; else only first 4
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
@@ -83,7 +85,10 @@ const Projects = () => {
             </p>
 
             {/* View Button */}
-            <button className="bg-orange-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-orange-600 transition w-fit">
+            <button 
+              onClick={() => handleViewProject(project)}
+              className="bg-orange-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-orange-600 transition w-fit"
+            >
               View →
             </button>
           </div>
@@ -99,6 +104,12 @@ const Projects = () => {
           <span className="w-2 h-2 rounded-full bg-gray-400"></span>
         </div>
       )}
+      
+      <ProjectViewModal 
+        isOpen={isViewModalOpen}
+        onClose={() => setIsViewModalOpen(false)}
+        project={selectedProject}
+      />
     </div>
   );
 };

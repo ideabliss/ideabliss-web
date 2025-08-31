@@ -25,7 +25,7 @@ const Footer = () => {
               placeholder="Enter your Contact Number"
               className="flex-1 rounded-lg p-3  bg-white text-black"
             />
-            <button className="bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-lg font-medium">
+            <button className="bg-orange-300 hover:bg-orange-600 transition px-6 py-3 rounded-lg font-medium">
               Contact Me
             </button>
           </div>
@@ -39,7 +39,7 @@ const Footer = () => {
         {/* Logo + Description */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="bg-orange-500 w-10 h-10 flex items-center justify-center rounded-full font-bold">
+            <div className="bg-orange-300 w-10 h-10 flex items-center justify-center rounded-full font-bold">
               IB
             </div>
             <h3 className="font-semibold text-lg">IDEABLISS</h3>
@@ -61,7 +61,6 @@ const Footer = () => {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-orange-500 font-semibold mb-3">Navigation</h3>
           <nav>
             <ul className="space-y-2 text-gray-300">
               <li><a href="/" aria-label="Home page">Home</a></li>
@@ -74,7 +73,6 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-orange-500 font-semibold mb-3">Contact</h3>
           <address className="not-italic">
             <p className="text-gray-300"><a href="tel:+917972873499">+91 7972873499</a></p>
             <p className="text-gray-300"><a href="mailto:ideabliss4@gmail.com">ideabliss4@gmail.com</a></p>
@@ -90,7 +88,7 @@ const Footer = () => {
       placeholder="Email Address"
       className="flex-1 p-3 bg-white text-black rounded-l-lg outline-none"
     />
-    <button className="bg-orange-500 hover:bg-orange-600 transition px-4 rounded-r-lg text-white">
+    <button className="bg-orange-300 hover:bg-orange-600 transition px-4 rounded-r-lg text-white">
       →
     </button>
   </div>
