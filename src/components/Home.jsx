@@ -4,7 +4,6 @@ import HeroSection from "./HeroSection";
 import Services from "./Services";
 import Projects from "./Projects";
 import AboutUs from "./AboutUs";
-import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -15,7 +14,6 @@ const Home = () => {
       <Services />
       <Projects />
       <AboutUs />
-      <ContactForm />
       <Footer />
     </>
   );
