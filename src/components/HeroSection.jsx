@@ -4,7 +4,7 @@ import BulbImg from "../assets/bulb.png";
 /* ---------------- HERO SECTION ---------------- */
 const HeroSection = () => {
   return (
-    <section className="relative text-center px-4 sm:px-6 py-8 mt-28" >
+    <main className="relative text-center px-4 sm:px-6 py-8 mt-28" >
       {/* Top Text */}
       <p className="max-w-3xl mx-auto text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed">
         <span className="text-orange-500">“</span> Stuck with your project? We've got you
@@ -29,7 +29,7 @@ const HeroSection = () => {
         {/* Bulb Image */}
         <img
           src={BulbImg}
-          alt="Bulb Idea"
+          alt="IdeaBliss - Innovative Academic Project Solutions"
           className="w-28 h-28 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain"
         />
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </span>
         </button>
       </div>
-    </section>
+    </main>
   );
 };
 

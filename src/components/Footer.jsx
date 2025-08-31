@@ -40,9 +40,9 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="bg-orange-500 w-10 h-10 flex items-center justify-center rounded-full font-bold">
-              JC
+              IB
             </div>
-            <p className="font-semibold">JCREA</p>
+            <h3 className="font-semibold text-lg">IDEABLISS</h3>
           </div>
           <p className="text-gray-400 leading-relaxed">
             we specialize in delivering high-quality mini, major, and capstone projects for diploma and engineering students. 
@@ -51,30 +51,34 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-4 text-gray-300">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaWhatsapp /></a>
+            <a href="https://facebook.com/ideabliss" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><FaFacebookF /></a>
+            <a href="https://instagram.com/ideabliss" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><FaInstagram /></a>
+            <a href="https://twitter.com/ideabliss" aria-label="Twitter" rel="noopener noreferrer" target="_blank"><FaTwitter /></a>
+            <a href="https://linkedin.com/company/ideabliss" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><FaLinkedinIn /></a>
+            <a href="https://wa.me/917972873499" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><FaWhatsapp /></a>
           </div>
         </div>
 
         {/* Navigation */}
         <div>
           <h3 className="text-orange-500 font-semibold mb-3">Navigation</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+          <nav>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="/" aria-label="Home page">Home</a></li>
+              <li><a href="/projects" aria-label="Our projects">Projects</a></li>
+              <li><a href="/about" aria-label="About us">About Us</a></li>
+              <li><a href="/contact" aria-label="Contact us">Contact Us</a></li>
+            </ul>
+          </nav>
         </div>
 
         {/* Contact Info */}
         <div>
           <h3 className="text-orange-500 font-semibold mb-3">Contact</h3>
-          <p className="text-gray-300">+91 7972873499</p>
-          <p className="text-gray-300">ideabliss4@gmail.com</p>
+          <address className="not-italic">
+            <p className="text-gray-300"><a href="tel:+917972873499">+91 7972873499</a></p>
+            <p className="text-gray-300"><a href="mailto:ideabliss4@gmail.com">ideabliss4@gmail.com</a></p>
+          </address>
         </div>
 
         {/* Newsletter */}
