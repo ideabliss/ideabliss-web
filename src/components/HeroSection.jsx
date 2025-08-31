@@ -17,7 +17,7 @@ const HeroSection = () => {
       </p>
 
       {/* Tagline */}
-      <p className="mt-6 font-bold text-gray-700 text-base sm:text-lg md:text-xl">
+      <p className="lg:mt-6 mt-10 font-bold text-gray-700 text-base sm:text-lg md:text-xl">
         <span className="text-gray-600">❝ YOUR</span>
         <span className="text-orange-500"> PROBLEM</span>
         <span className="text-gray-600"> OUR</span>
