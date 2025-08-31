@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ideabliss.com/sitemap.xml
+Sitemap: https://ideabliss.in/sitemap.xml
