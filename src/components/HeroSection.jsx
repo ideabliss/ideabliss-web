@@ -4,7 +4,8 @@ import BulbImg from "../assets/bulb.png";
 /* ---------------- HERO SECTION ---------------- */
 const HeroSection = () => {
   return (
-    <main className="relative text-center px-4 sm:px-6 py-8 mt-28" >
+   <main className="relative text-center px-4 sm:px-6 py-8 mt-28 mb-0 sm:mb-0 md:mb-0 lg:mb-10">
+
       {/* Top Text */}
       <p className="max-w-3xl mx-auto text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed">
         <span className="text-orange-500">“</span> Stuck with your project? We've got you
