@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import BulbImg from "../assets/bulb.png";
+import ProjectRequestModal from "./ProjectRequestModal";
 
 /* ---------------- HERO SECTION ---------------- */
 const HeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
    <main className="relative text-center px-4 sm:px-6  mt-28 mb-0 sm:mb-0 md:mb-0 ">
 
@@ -49,18 +52,26 @@ const HeroSection = () => {
         </div>
 
         {/* Buttons */}
-        <button className="mt-6 flex items-center rounded-full bg-gradient-to-r from-[#FFE9D8] to-[#FFD6B3] p-1 shadow-md text-xs sm:text-sm md:text-base">
+        <div className="mt-6 flex items-center rounded-full bg-gradient-to-r from-[#FFE9D8] to-[#FFD6B3] p-1 shadow-md text-xs sm:text-sm md:text-base">
           {/* Left - Request */}
-          <span className="flex items-center gap-1 rounded-full bg-[#F0582B] px-3 py-1 sm:px-4 sm:py-2 text-white font-medium">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="flex items-center gap-1 rounded-full bg-[#F0582B] px-3 py-1 sm:px-4 sm:py-2 text-white font-medium hover:bg-[#E04A20] transition"
+          >
             Request <span className="text-sm sm:text-base">↗</span>
-          </span>
+          </button>
 
           {/* Right - Explore */}
           <span className="px-3 py-1 sm:px-4 sm:py-2 text-[#F0582B] font-medium">
             Explore
           </span>
-        </button>
+        </div>
       </div>
+      
+      <ProjectRequestModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </main>
   );
 };
