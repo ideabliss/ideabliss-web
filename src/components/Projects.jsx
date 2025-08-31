@@ -18,7 +18,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-[#1E1E1E] rounded-3xl p-8 text-white">
+    <div className="bg-[#1E1E1E] rounded-t-3xl p-8 text-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">

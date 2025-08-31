@@ -83,18 +83,19 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div>
-          <h3 className="text-orange-500 font-semibold mb-3">Get the latest information</h3>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="flex-1 p-3 text-black rounded-l-lg"
-            />
-            <button className="bg-orange-500 hover:bg-orange-600 transition px-4 rounded-r-lg">
-              →
-            </button>
-          </div>
-        </div>
+  <h3 className="text-orange-500 font-semibold mb-3">Get the latest information</h3>
+  <div className="flex">
+    <input
+      type="email"
+      placeholder="Email Address"
+      className="flex-1 p-3 bg-white text-black rounded-l-lg outline-none"
+    />
+    <button className="bg-orange-500 hover:bg-orange-600 transition px-4 rounded-r-lg text-white">
+      →
+    </button>
+  </div>
+</div>
+
       </div>
 
       <hr className="border-gray-600 my-8" />

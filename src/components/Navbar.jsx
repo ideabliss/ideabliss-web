@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react"; // icons for mobile
+import { Menu, X, Lightbulb } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,10 +21,9 @@ const Navbar = () => {
 
       {/* Center Logo */}
       <div className="flex items-center gap-2 cursor-pointer">
-        <div className="bg-orange-500 w-10 h-10 rounded-full flex justify-center items-center font-bold shadow-md">
-          JC
-        </div>
-        <span className="font-bold tracking-wider text-lg">IDEABLISS</span>
+        <span className="font-bold tracking-wider text-lg flex items-center gap-1">
+          <Lightbulb className="text-white w-5 h-5" /> IDEABLISS
+        </span>
       </div>
 
       {/* Right - Nav Links */}
@@ -39,7 +38,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden flex items-center text-orange-500"
+        className="md:hidden flex items-center text-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -47,20 +46,29 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black rounded-b-2xl p-6 flex flex-col items-center space-y-6 font-medium md:hidden z-50">
+        <div className="absolute top-16 left-0 w-full bg-zinc-900 rounded-b-3xl shadow-lg px-8 py-6 flex flex-col items-start space-y-4 font-medium md:hidden z-50 animate-slideDown">
           <a
             href="/"
-            className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:bg-orange-600 transition w-full text-center"
+            className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:bg-orange-600 transition w-full text-left"
           >
             Home
           </a>
-          <a href="/projects" className="hover:text-orange-500 transition">
+          <a
+            href="/projects"
+            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
+          >
             Projects
           </a>
-          <a href="/about" className="hover:text-orange-500 transition">
+          <a
+            href="/about"
+            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
+          >
             About
           </a>
-          <a href="/contact" className="hover:text-orange-500 transition">
+          <a
+            href="/contact"
+            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
+          >
             Contact
           </a>
         </div>
