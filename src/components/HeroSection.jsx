@@ -25,7 +25,7 @@ const HeroSection = () => {
       </p>
 
       {/* Bottom Semi Circle */}
-      <div className="lg:mt-20 mt-24 bg-orange-300 rounded-t-full w-full max-w-3xl h-64 sm:h-80 md:h-96 mx-auto flex flex-col justify-center items-center text-white shadow-lg relative overflow-hidden">
+      <div className="lg:mt-20 mt-28 bg-orange-300 rounded-t-full w-full max-w-3xl h-64 sm:h-80 md:h-96 mx-auto flex flex-col justify-center items-center text-white shadow-lg relative overflow-hidden">
         
         {/* Bulb Image */}
         <img
