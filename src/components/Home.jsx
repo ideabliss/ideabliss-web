@@ -10,11 +10,19 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <HeroSection />
-      <Services />
-      <Projects />
-      <AboutUs />
-      <Footer />
+      <section id="home">
+        <HeroSection />
+        <Services />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="about">
+        <AboutUs />
+      </section>
+      <section id="contact">
+        <Footer />
+      </section>
     </>
   );
 };

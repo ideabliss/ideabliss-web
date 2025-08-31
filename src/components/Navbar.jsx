@@ -9,12 +9,12 @@ const Navbar = () => {
       {/* Left - Nav Links */}
       <div className="hidden md:flex items-center space-x-8 font-medium">
         <a
-          href="/"
+          href="#home"
           className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:bg-orange-600 transition"
         >
           Home
         </a>
-        <a href="/projects" className="hover:text-orange-500 transition">
+        <a href="#projects" className="hover:text-orange-500 transition">
           Projects
         </a>
       </div>
@@ -28,51 +28,63 @@ const Navbar = () => {
 
       {/* Right - Nav Links */}
       <div className="hidden md:flex items-center space-x-8 font-medium">
-        <a href="/about" className="hover:text-orange-500 transition">
+        <a href="#about" className="hover:text-orange-500 transition">
           About
         </a>
-        <a href="/contact" className="hover:text-orange-500 transition">
+        <a href="#contact" className="hover:text-orange-500 transition">
           Contact
         </a>
       </div>
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden flex items-center text-white"
+        className="md:hidden flex items-center text-white z-50"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
       {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-zinc-900 rounded-b-3xl shadow-lg px-8 py-6 flex flex-col items-start space-y-4 font-medium md:hidden z-50 animate-slideDown">
-          <a
-            href="/"
-            className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:bg-orange-600 transition w-full text-left"
-          >
-            Home
-          </a>
-          <a
-            href="/projects"
-            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
-          >
-            Projects
-          </a>
-          <a
-            href="/about"
-            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
-          >
-            About
-          </a>
-          <a
-            href="/contact"
-            className="hover:text-orange-500 transition w-full py-2 rounded-lg hover:bg-zinc-800 pl-3"
-          >
-            Contact
-          </a>
-        </div>
-      )}
+     {isOpen && (
+  <div
+    className="absolute top-16 left-0 w-full backdrop-blur-xl bg-zinc-900/90 
+    rounded-b-3xl shadow-xl px-0 py-6 flex flex-col items-start space-y-2 
+    font-medium md:hidden z-40 animate-[slideDown_0.3s_ease-out]"
+  >
+    {/* Full-width orange Home */}
+    <a
+      href="#home"
+      className="bg-orange-300 text-white py-3 px-4 w-full 
+      font-semibold shadow-md hover:bg-orange-600 transition text-left"
+    >
+      Home
+    </a>
+
+    {/* Other links */}
+    {["Projects", "About", "Contact"].map((item) => (
+      <a
+        key={item}
+        href={`#${item.toLowerCase()}`}
+        className="w-full py-3 px-4 hover:bg-zinc-800 
+        transition flex items-center gap-2 border-l-4 border-transparent 
+        hover:border-orange-500"
+      >
+        {item}
+      </a>
+    ))}
+  </div>
+)}
+
+
+      {/* Animation keyframes */}
+      <style>
+        {`
+          @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+        `}
+      </style>
     </nav>
   );
 };

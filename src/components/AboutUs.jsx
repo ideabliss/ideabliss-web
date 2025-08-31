@@ -5,7 +5,7 @@ import AboutUsimg from "../assets/lapi.png";
 
 const AboutUs = () => {
   return (
-    <div className="bg-orange-500 text-white sm:p-10 p-6 flex flex-col md:flex-row items-center gap-8">
+    <div className="bg-orange-300 text-white sm:p-10 p-6 flex flex-col md:flex-row items-center gap-8">
       
       {/* Left Text Section */}
       <div className="flex-1 text-center md:text-left">
