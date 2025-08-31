@@ -1,10 +1,9 @@
-// Projects.jsx
-import React from "react";
+import React, { useState } from "react";
 
 const projects = [
   { 
     name: "AgroPath", 
-    description: "loreumjmgawfkgfjgsjszgdfjcmsgdcjmfsxgcmjdxgcmsgvxfjsfgemgfmsgfgsefkgskfgdkugfksegfsgfeksegfmjsdgfmsgcgsgfgfkesgfjegfkeufgmcxdgcmsgx A smart agriculture solution leveraging AI and IoT to monitor soil, predict crop yield, and optimize irrigation for farmers." 
+    description: "A smart agriculture solution leveraging AI and IoT to monitor soil, predict crop yield, and optimize irrigation for farmers hkh iwhdilhwd iahdihdoi awodihfah hawfkhaf ihdah iwhroiwhi wahdijrkgksg kughsrkgh hskh ihsektgesegdrghrgdrghfh." 
   },
   { 
     name: "GenSheduler", 
@@ -14,9 +13,40 @@ const projects = [
     name: "Exclusely", 
     description: "An exclusive e-commerce platform offering curated products, personalized recommendations, and a seamless user experience." 
   },
+  { 
+    name: "Help Hour", 
+    description: "Another version of AgroPath with extended details and features for smart agriculture using AI + IoT." 
+  },
+  { 
+    name: "GradeBookX", 
+    description: "Improved scheduling system with smart conflict resolution and advanced analytics." 
+  },
+  { 
+    name: "BMI Tracker", 
+    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
+  },
+  { 
+    name: "PostureXpert", 
+    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
+  },
+
+    { 
+    name: "EaseHire", 
+    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
+  },
+
+  { 
+    name: "EaseHire", 
+    description: "Second phase of Exclusely with more curated product collections and AI-based shopping experience." 
+  },
 ];
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  // If showAll = true, show all projects; else only first 4
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <div className="bg-[#1E1E1E] rounded-t-3xl p-8 text-white">
       {/* Header */}
@@ -24,14 +54,17 @@ const Projects = () => {
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
           Lets have a look at my <span className="text-orange-500">Projects</span>
         </h2>
-        <button className="bg-orange-500 text-white px-4 sm:px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-orange-600 transition">
-          See All
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-orange-500 text-white px-4 sm:px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-orange-600 transition"
+        >
+          {showAll ? "Show Less" : "See All"}
         </button>
       </div>
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <div
             key={index}
             className="bg-[#2A2A2A] rounded-xl border border-gray-600 p-4 flex flex-col text-left"
@@ -57,13 +90,15 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Dots Navigation */}
-      <div className="flex justify-center mt-6 space-x-2">
-        <span className="w-6 h-2 rounded-full bg-orange-500"></span>
-        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-      </div>
+      {/* Dots Navigation (optional - only when not showing all) */}
+      {!showAll && (
+        <div className="flex justify-center mt-6 space-x-2">
+          <span className="w-6 h-2 rounded-full bg-orange-500"></span>
+          <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+          <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+          <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+        </div>
+      )}
     </div>
   );
 };
