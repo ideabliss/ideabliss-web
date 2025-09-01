@@ -88,37 +88,38 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div
-          className="absolute top-16 left-0 w-full backdrop-blur-xl bg-zinc-900/90 
-          rounded-b-3xl shadow-xl px-0 py-6 flex flex-col items-start space-y-2 
-          font-medium md:hidden z-40 animate-[slideDown_0.3s_ease-out]"
-        >
-          <button
-            onClick={() => handleClick("#home")}
-            className={`w-full py-3 px-4 text-left font-semibold shadow-md transition ${
-              active === "#home"
-                ? "bg-orange-500 text-white"
-                : "text-white hover:bg-orange-600"
-            }`}
-          >
-            Home
-          </button>
+  <div
+    className="absolute top-16 left-0 w-full backdrop-blur-xl bg-zinc-900/90 
+    rounded-b-3xl shadow-xl px-0 py-6 flex flex-col items-start space-y-2 
+    font-medium md:hidden z-40 animate-[slideDown_0.3s_ease-out]"
+  >
+    <button
+      onClick={() => handleClick("#home")}
+      className={`w-full py-3 px-4 text-left font-semibold shadow-md transition ${
+        active === "#home"
+          ? "text-orange-300 border-l-4 border-orange-500"
+          : "text-white hover:bg-zinc-800 hover:border-orange-500 border-l-4 border-transparent"
+      }`}
+    >
+      Home
+    </button>
 
-          {navLinks.map((link) => (
-            <button
-              key={link}
-              onClick={() => handleClick(`#${link}`)}
-              className={`w-full py-3 px-4 flex items-center gap-2 border-l-4 transition text-left ${
-                active === `#${link}`
-                  ? "text-orange-300 border-orange-500"
-                  : "hover:bg-zinc-800 border-transparent hover:border-orange-500"
-              }`}
-            >
-              {link.charAt(0).toUpperCase() + link.slice(1)}
-            </button>
-          ))}
-        </div>
-      )}
+    {navLinks.map((link) => (
+      <button
+        key={link}
+        onClick={() => handleClick(`#${link}`)}
+        className={`w-full py-3 px-4 flex items-center gap-2 border-l-4 transition text-left ${
+          active === `#${link}`
+            ? "text-orange-300 border-orange-500"
+            : "hover:bg-zinc-800 border-transparent hover:border-orange-500"
+        }`}
+      >
+        {link.charAt(0).toUpperCase() + link.slice(1)}
+      </button>
+    ))}
+  </div>
+)}
+
 
       {/* Animation keyframes */}
       <style>
