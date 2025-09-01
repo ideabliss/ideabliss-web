@@ -58,7 +58,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
               value={formData.fullName}
               onChange={handleChange}
               required
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
             />
           </div>
 
@@ -73,7 +73,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
               value={formData.contactNo}
               onChange={handleChange}
               required
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
             />
           </div>
 
@@ -96,7 +96,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
                       checked={formData.purpose === option}
                       onChange={handleChange}
                       required
-                      className="mr-2 text-purple-600 focus:ring-purple-500"
+                      className="mr-2text-orange-300 focus:ring-orange-300"
                     />
                     {option}
                   </label>
@@ -116,7 +116,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
                 name="otherPurpose"
                 value={formData.otherPurpose}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+                className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
               />
             </div>
           )}
@@ -132,7 +132,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
               rows="3"
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
             />
           </div>
 
@@ -148,7 +148,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
               rows="3"
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
             />
           </div>
 
@@ -163,7 +163,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
               rows="3"
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-left"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-300 focus:border-orange-300 text-left"
             />
           </div>
 
@@ -190,7 +190,7 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
                 checked={formData.agreeToTerms}
                 onChange={handleChange}
                 required
-                className="mr-2 mt-1 text-purple-600 focus:ring-purple-500"
+                className="mr-2 mt-1text-orange-300 focus:ring-orange-300"
               />
               <span className="text-sm text-gray-700">
                 I agree to the Terms and Conditions
@@ -200,11 +200,12 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
 
           {/* Submit */}
           <button
-            type="submit"
-            className="w-full bg-purple-600 text-white py-3 rounded-md font-medium hover:bg-purple-700 transition text-left"
-          >
-            Submit Request
-          </button>
+  type="submit"
+  className="w-full bg-orange-300 text-white py-3 rounded-md font-medium hover:bg-purple-700 transition text-center"
+>
+  Submit Request
+</button>
+
         </form>
 
         <style>

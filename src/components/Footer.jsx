@@ -1,5 +1,6 @@
 // Footer.jsx
 import React from "react";
+import { Lightbulb } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
@@ -39,22 +40,21 @@ const Footer = () => {
         {/* Logo + Description */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="bg-orange-300 w-10 h-10 flex items-center justify-center rounded-full font-bold">
-              IB
-            </div>
-            <h3 className="font-semibold text-lg">IDEABLISS</h3>
-          </div>
-          <p className="text-gray-400 leading-relaxed">
-            we specialize in delivering high-quality mini, major, and capstone projects for diploma and engineering students. 
-            From idea to execution, we ensure practical, innovative, and industry-ready solutions tailored to your need
-          </p>
+  <div className="bg-orange-300 w-10 h-10 flex items-center justify-center rounded-full">
+    <Lightbulb className="w-6 h-6 text-white" />
+  </div>
+  <h3 className="font-semibold text-lg">IDEABLISS</h3>
+</div>
+         <p className="text-gray-400 leading-relaxed text-left">
+  We specialize in delivering high-quality mini, major, and capstone projects for diploma and engineering students. 
+  From idea to execution, we ensure practical, innovative, and industry-ready solutions tailored to your need.
+</p>
+
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-4 text-gray-300">
-            <a href="https://facebook.com/ideabliss" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><FaFacebookF /></a>
-            <a href="https://instagram.com/ideabliss" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><FaInstagram /></a>
-            <a href="https://twitter.com/ideabliss" aria-label="Twitter" rel="noopener noreferrer" target="_blank"><FaTwitter /></a>
-            <a href="https://linkedin.com/company/ideabliss" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><FaLinkedinIn /></a>
+            <a href="https://instagram.com/ideabliss_" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/aditya-shinde45?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><FaLinkedinIn /></a>
             <a href="https://wa.me/917972873499" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><FaWhatsapp /></a>
           </div>
         </div>
@@ -73,6 +73,8 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
+            <h3 className="text-orange-300 font-semibold mb-3">Contact Info</h3>
+
           <address className="not-italic">
             <p className="text-gray-300"><a href="tel:+917972873499">+91 7972873499</a></p>
             <p className="text-gray-300"><a href="mailto:ideabliss4@gmail.com">ideabliss4@gmail.com</a></p>
@@ -81,7 +83,7 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div>
-  <h3 className="text-orange-500 font-semibold mb-3">Get the latest information</h3>
+  <h3 className="text-orange-300 font-semibold mb-3">Get the latest information</h3>
   <div className="flex">
     <input
       type="email"
