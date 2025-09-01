@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
+import { submitToGoogleSheet } from "../utils/googleSheets";
+import SuccessModal from "./SuccessModal";
 
 const ProjectRequestModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,8 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
     projectRequirements: "",
     agreeToTerms: false,
   });
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -21,10 +25,28 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
+    setIsLoading(true);
+    
+    const sheetData = {
+      'Full Name': formData.fullName,
+      'Contact No': formData.contactNo,
+      'Purpose': formData.purpose,
+      'Other Purpose': formData.otherPurpose,
+      'Problem Statement': formData.problemStatement,
+      'Additional Requirements': formData.additionalRequirements,
+      'Project Requirements': formData.projectRequirements
+    };
+    
+    const result = await submitToGoogleSheet(sheetData, 'Project Requests');
+    setIsLoading(false);
+    
+    if (result.success) {
+      setShowSuccess(true);
+    } else {
+      alert('Error submitting request. Please try again.');
+    }
   };
 
   if (!isOpen) return null;
@@ -200,11 +222,19 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
 
           {/* Submit */}
           <button
-  type="submit"
-  className="w-full bg-orange-300 text-white py-3 rounded-md font-medium hover:bg-purple-700 transition text-center"
->
-  Submit Request
-</button>
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-orange-300 text-white py-3 rounded-md font-medium hover:bg-orange-400 transition text-center disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="animate-spin" size={20} />
+                Submitting...
+              </>
+            ) : (
+              'Submit Request'
+            )}
+          </button>
 
         </form>
 
@@ -217,6 +247,15 @@ const ProjectRequestModal = ({ isOpen, onClose }) => {
           `}
         </style>
       </div>
+      
+      <SuccessModal 
+        isOpen={showSuccess}
+        onClose={() => {
+          setShowSuccess(false);
+          onClose();
+        }}
+        message="Your project request has been submitted successfully! We'll get back to you soon."
+      />
     </div>
   );
 };

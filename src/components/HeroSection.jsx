@@ -58,7 +58,7 @@ const HeroSection = () => {
             onClick={() => setIsModalOpen(true)}
             className="flex items-center gap-1 rounded-full bg-[#F0582B] px-3 py-1 sm:px-4 sm:py-2 text-white font-medium hover:bg-[#E04A20] transition"
           >
-            Request <span className="text-sm sm:text-base">↗</span>
+          Purchase Request <span className="text-sm sm:text-base">↗</span>
           </button>
 
           {/* Right - Explore */}
@@ -70,7 +70,7 @@ const HeroSection = () => {
             }}
             className="px-3 py-1 sm:px-4 sm:py-2 text-[#F0582B] font-medium hover:text-[#E04A20] transition"
           >
-            Explore
+           Project Explore
           </button>
         </div>
       </div>

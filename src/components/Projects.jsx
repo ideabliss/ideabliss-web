@@ -35,15 +35,31 @@ const Projects = () => {
   };
 
   // Swipe handling
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
   const minSwipeDistance = 50;
 
   const onTouchStart = (e) => setTouchStartX(e.targetTouches[0].clientX);
+
   const onTouchMove = (e) => setTouchEndX(e.targetTouches[0].clientX);
+
   const onTouchEnd = () => {
-    if (touchStartX - touchEndX > minSwipeDistance) handleNextPage();
-    if (touchEndX - touchStartX > minSwipeDistance) handlePrevPage();
+    if (touchStartX === null || touchEndX === null) return;
+
+    const distance = touchStartX - touchEndX;
+
+    // Only trigger swipe if it's beyond threshold
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        handleNextPage(); // swipe left → next
+      } else {
+        handlePrevPage(); // swipe right → prev
+      }
+    }
+
+    // Reset
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
   const paginatedProjects = showAll
@@ -59,7 +75,7 @@ const Projects = () => {
         </h2>
         <button
           onClick={() => setShowAll(!showAll)}
-          className="bg-orange-300 text-white px-4 sm:px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-orange-600 transition"
+          className="bg-orange-300 text-white px-4 sm:px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-orange-300 transition"
         >
           {showAll ? "Show Less" : "See All"}
         </button>
@@ -77,7 +93,7 @@ const Projects = () => {
             key={index}
             className="bg-[#2A2A2A] rounded-xl border border-gray-600 p-4 flex flex-col text-left"
           >
-            <div className="rounded-t-xl h-40 sm:h-52 md:h-80 mb-4 overflow-hidden bg-gray-300">
+            <div className="rounded-t-xl h-62 sm:h-52 md:h-80 mb-4 overflow-hidden bg-gray-300">
               {project.images && project.images.length > 0 ? (
                 <img
                   src={project.images[0]}
@@ -98,7 +114,7 @@ const Projects = () => {
 
             <button
               onClick={() => handleViewProject(project)}
-              className="bg-orange-300 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-orange-600 transition w-fit"
+              className="bg-orange-300 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-orange-300 transition w-fit"
             >
               View →
             </button>

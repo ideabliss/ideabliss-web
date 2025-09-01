@@ -37,6 +37,9 @@ const Services = () => {
           <span className="marquee-item mx-8 text-white text-lg font-semibold">
             Web Application ✦ Mobile Application ✦ AI & ML ✦ IoT ✦ Cloud ✦ Other Services
           </span>
+           <span className="marquee-item mx-8 text-white text-lg font-semibold">
+            Web Application ✦ Mobile Application ✦ AI & ML ✦ IoT ✦ Cloud ✦ Other Services
+          </span>
         </div>
       </div>
     </section>

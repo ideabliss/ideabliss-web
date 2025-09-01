@@ -7,9 +7,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['#home', '#projects', '#about', '#contact'];
+      const sections = ["#home", "#projects", "#about", "#contact"];
       const scrollPosition = window.scrollY + 100;
-      
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.querySelector(sections[i]);
         if (element && element.offsetTop <= scrollPosition) {
@@ -19,8 +19,8 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (id) => {
@@ -38,9 +38,7 @@ const Navbar = () => {
         <button
           onClick={() => handleClick("#home")}
           className={`px-5 py-2 rounded-full font-semibold shadow-md transition ${
-            active === "#home"
-              ? "bg-orange-500 text-white"
-              : "bg-transparent text-white hover:bg-orange-600"
+            active === "#home" ? "text-orange-300" : "hover:text-orange-300"
           }`}
         >
           Home
@@ -50,7 +48,7 @@ const Navbar = () => {
             key={link}
             onClick={() => handleClick(`#${link}`)}
             className={`transition ${
-              active === `#${link}` ? "text-orange-300" : "hover:text-white"
+              active === `#${link}` ? "text-orange-300" : "hover:text-orange-300"
             }`}
           >
             {link.charAt(0).toUpperCase() + link.slice(1)}
@@ -72,7 +70,7 @@ const Navbar = () => {
             key={link}
             onClick={() => handleClick(`#${link}`)}
             className={`transition ${
-              active === `#${link}` ? "text-orange-300" : "hover:text-orange-500"
+              active === `#${link}` ? "text-orange-300" : "hover:text-orange-300"
             }`}
           >
             {link.charAt(0).toUpperCase() + link.slice(1)}
