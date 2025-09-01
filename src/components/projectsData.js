@@ -10,9 +10,10 @@ import easeHireImg1 from "../assets/EaseHire1.png";
 import easeHireImg2 from "../assets/EaseHire2.png";
 import excuselyImg1 from "../assets/Escusely1.png";
 import excuselyImg2 from "../assets/Escusely2.png";
-import helpHourImg from "../assets/3.png";
 import bmiImg1 from "../assets/BMI1.png";
 import bmiImg2 from "../assets/BMI2.png";
+import helphour1 from "../assets/HelpHour1.png";
+import helphour2 from "../assets/HelpHour2.png";
 
 const projects = [
   {
@@ -69,7 +70,7 @@ const projects = [
     overview: "Help Hour is a service booking platform that connects users with professionals for everyday needs such as plumbing, electrical work, and house cleaning. The website allows customers to browse services, book appointments, and track service status seamlessly. An admin dashboard is also included for managing bookings, monitoring service requests, and overseeing service providers. With a simple and user-friendly design, Help Hour makes household service booking fast, reliable, and hassle-free.",
     techStack: ["HTML", "CSS", "JavaScript", "Firebase"],
     githubLink: "https://github.com/ideabliss/Help-Hour",
-    images: [helpHourImg, helpHourImg]
+    images: [helphour1, helphour2]
   },
   {
     name: "BMI Tracker",
