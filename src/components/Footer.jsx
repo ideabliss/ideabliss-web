@@ -1,7 +1,7 @@
 // Footer.jsx
 import React, { useState } from "react";
 import { Lightbulb, Loader2 } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp, FaGithub } from "react-icons/fa";
 import { submitToGoogleSheet } from "../utils/googleSheets";
 import SuccessModal from "./SuccessModal";
 
@@ -118,7 +118,8 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-4 mt-4 text-gray-300">
             <a href="https://instagram.com/ideabliss_" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><FaInstagram /></a>
-            <a href="https://www.linkedin.com/in/aditya-shinde45?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><FaLinkedinIn /></a>
+            <a href="https://www.linkedin.com/in/aditya-shinde45" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><FaLinkedinIn /></a>
+            <a href="https://github.com/ideabliss" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><FaGithub /></a>
             <a href="https://wa.me/917972873499" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><FaWhatsapp /></a>
           </div>
         </div>
