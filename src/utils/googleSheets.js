@@ -8,7 +8,7 @@ export const submitToGoogleSheet = async (data, sheetName) => {
       ...data
     });
     
-    const response = await fetch(`https://script.google.com/macros/s/AKfycbzUaahswhibhBGZSYrFvIGy4_4pBhtutZLhCEtCz04DSWD6f5LXgbHz0ood8F50ZyHX/exec?${params}`, {
+    const response = await fetch(`https://script.google.com/macros/s/AKfycbwabhT8r5WNbAjAsEiGSLoP_gWcXMy5Z9mu87Ql-KYMFCImlFoJmBZgTraMBOLHEek/exec?${params}`, {
       method: 'GET',
       mode: 'no-cors'
     });
