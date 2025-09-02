@@ -126,12 +126,13 @@ const Footer = () => {
 
         {/* Navigation */}
         <div>
+          <h3 className="text-orange-300 font-semibold mb-3">Navigation</h3>
           <nav>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/" aria-label="Home page">Home</a></li>
-              <li><a href="/projects" aria-label="Our projects">Projects</a></li>
-              <li><a href="/about" aria-label="About us">About Us</a></li>
-              <li><a href="/contact" aria-label="Contact us">Contact Us</a></li>
+              <li><button onClick={() => document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-300 transition text-left">Home</button></li>
+              <li><button onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-300 transition text-left">Projects</button></li>
+              <li><button onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-300 transition text-left">About Us</button></li>
+              <li><button onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-orange-300 transition text-left">Contact Us</button></li>
             </ul>
           </nav>
         </div>
