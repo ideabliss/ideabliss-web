@@ -60,15 +60,7 @@ const ProjectViewModal = ({ isOpen, onClose, project }) => {
 
           {/* Links */}
           <div className="flex gap-4">
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
-            >
-              <Github size={20} />
-              View on GitHub
-            </a>
+          
             {project.liveLink && (
               <a
                 href={project.liveLink}
